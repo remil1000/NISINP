@@ -37,9 +37,6 @@ RUN python -m pip install .
 
 RUN apt-get update && apt-get install -y gettext && apt-get clean
 
-# those are required in v2.0.3 but not in pyproject.toml # TODO: bug
-RUN python -m pip install django-debug-toolbar pytz
-
 COPY docker-init.sh /app/docker-init.sh
 CMD /app/docker-init.sh
 
